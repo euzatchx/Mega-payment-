@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة الدفع</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-6 text-center text-2xl font-bold shadow">
+    منصة الدفع
+  </header>  <!-- Plans Section -->  <section class="p-6 max-w-4xl mx-auto">
+    <h2 class="text-xl font-semibold mb-4 text-center">الباقات المتاحة</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Plan 1 -->
+      <div class="bg-white p-6 rounded-2xl shadow text-center">
+        <h3 class="text-lg font-bold mb-2">الباقة الشهرية</h3>
+        <p class="text-gray-600 mb-4">1000 دج / شهر</p>
+        <button onclick="selectPlan('الباقة الشهرية')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">اختر الباقة</button>
+      </div><!-- Plan 2 -->
+  <div class="bg-white p-6 rounded-2xl shadow text-center">
+    <h3 class="text-lg font-bold mb-2">الباقة السنوية</h3>
+    <p class="text-gray-600 mb-4">10000 دج / سنة</p>
+    <button onclick="selectPlan('الباقة السنوية')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">اختر الباقة</button>
+  </div>
+
+  <!-- Plan 3 -->
+  <div class="bg-white p-6 rounded-2xl shadow text-center">
+    <h3 class="text-lg font-bold mb-2">الباقة VIP</h3>
+    <p class="text-gray-600 mb-4">15000 دج / سنة</p>
+    <button onclick="selectPlan('الباقة VIP')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">اختر الباقة</button>
+  </div>
+</div>
+
+  </section>  <!-- Payment Methods -->  <section class="p-6 max-w-3xl mx-auto">
+    <h2 class="text-xl font-semibold mb-4 text-center">طرق الدفع المتوفرة</h2>
+    <div class="bg-white p-6 rounded-2xl shadow text-center space-y-4">
+      <p class="text-lg">✅ بريدي موب</p>
+      <p class="text-lg">✅ USDT (Tether)</p>
+    </div>
+  </section>  <!-- Order Form -->  <section class="p-6 max-w-3xl mx-auto">
+    <h2 class="text-xl font-semibold mb-4 text-center">إرسال طلبك</h2>
+    <form id="orderForm" class="bg-white p-6 rounded-2xl shadow space-y-4">
+      <div>
+        <label class="block mb-1 font-medium">الاسم الكامل</label>
+        <input type="text" name="name" class="w-full border rounded-lg p-2" required>
+      </div>
+      <div>
+        <label class="block mb-1 font-medium">الباقة المختارة</label>
+        <input type="text" id="selectedPlan" name="plan" class="w-full border rounded-lg p-2" readonly required>
+      </div>
+      <div>
+        <label class="block mb-1 font-medium">طريقة الدفع</label>
+        <select name="payment" class="w-full border rounded-lg p-2" required>
+          <option value="">-- اختر طريقة الدفع --</option>
+          <option value="بريدي موب">بريدي موب</option>
+          <option value="USDT">USDT</option>
+        </select>
+      </div>
+      <div>
+        <label class="block mb-1 font-medium">رقم الهاتف / البريد الإلكتروني</label>
+        <input type="text" name="contact" class="w-full border rounded-lg p-2" required>
+      </div>
+      <button type="submit" class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">إرسال الطلب</button>
+    </form>
+  </section>  <!-- Footer -->  <footer class="bg-gray-800 text-white p-4 text-center mt-6">
+    جميع الحقوق محفوظة © 2025
+  </footer>  <script>
+    function selectPlan(plan) {
+      document.getElementById('selectedPlan').value = plan;
+      window.scrollTo({ top: document.getElementById('orderForm').offsetTop - 50, behavior: 'smooth' });
+    }
+
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('تم إرسال طلبك بنجاح! ✅');
+    });
+  </script></body>
+</html>
